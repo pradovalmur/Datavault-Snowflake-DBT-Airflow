@@ -1,0 +1,12 @@
+models:
+  - name: hub_account
+    columns:
+      - name: hk_account
+        tests:
+         - unique
+         - not_null
+         - relationships:
+            to: ref('sat_account')
+            field: hk_account
+            severity: warn
+

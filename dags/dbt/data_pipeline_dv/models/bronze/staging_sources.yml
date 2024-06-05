@@ -1,0 +1,18 @@
+version: 2
+
+sources:
+  - name: staging
+    database: dbt_db
+    schema: bronze
+    tables:
+      - name: transactions
+        columns:
+          - name: CODIGO_DO_INVESTIDOR
+            tests:
+              - not_null
+      - name: investidors
+        columns:
+          - name: CODIGO_DO_INVESTIDOR
+            tests:
+              - not_null
+
